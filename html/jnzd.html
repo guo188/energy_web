@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>节能验证</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="../js/echarts.common.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<p border=0>
+    <img src="../image/top.jpg" width="1920" height="100"></imgsrc>
+</p>
+<ul class="nav nav-pills">
+    <li><a href="main.html">首页</a></li>
+    <li><a href="nhfz.html">能耗仿真</a></li>
+    <li class="active"><a href="jnzd.html">节能诊断</a></li>
+    <li><a href="jnyz.html">节能验证</a></li>
+    <li><a href="cxtj.html">查询统计</a></li>
+    <li><a href="zhwh.html">综合维护</a></li>
+    <li><a href="xtgl.html">系统管理</a></li>
+</ul>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2">
+            <h2>能效分析</h2>
+        </div>
+
+        <div class="col-sm-2">
+            <h5>选择场景</h5>
+            <hr>
+        </div>
+        <div class="col-sm-4">
+            <h5>编译信息</h5>
+            <h5>分析结果</h5>
+        </div>
+        <div class="col-sm-4">
+            <div id = "chart1" style="width: 600px;height: 400px;">
+                <script type="text/javascript">
+                    // 基于准备好的dom，初始化echarts实例
+                    var myChart = echarts.init(document.getElementById('chart1'));
+
+                    // 指定图表的配置项和数据
+                    var option = {
+                        title: {
+                            text: '空调系统模拟信息'
+                        },
+                        tooltip: {},
+                        legend: {
+                            data:['销量']
+                        },
+                        xAxis: {
+                            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                        },
+                        yAxis: {},
+                        series: [{
+                            name: '销量',
+                            type: 'bar',
+                            data: [5, 20, 36, 10, 10, 20]
+                        }]
+                    };
+
+                    // 使用刚指定的配置项和数据显示图表。
+                    myChart.setOption(option);
+                </script>
+            </div>
+            <div id = "chart2" style="width: 600px;height: 400px;">
+                <script type="text/javascript">
+                    // 基于准备好的dom，初始化echarts实例
+                    var myChart = echarts.init(document.getElementById('chart2'));
+
+                    // 指定图表的配置项和数据
+                    option = {
+                        title : {
+                            text: '节能诊断结果',
+                            x:'center'
+                        },
+                        tooltip : {
+                            trigger: 'item',
+                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                        },
+                        legend: {
+                            orient: 'vertical',
+                            left: 'right',
+                            data: ['经济运行','非经济运行','1级','2级','3级','合格','不合格']
+                        },
+                        series : [
+                            {
+                                name: '诊断结果',
+                                type: 'pie',
+                                radius : '55%',
+                                center: ['50%', '60%'],
+                                data:[
+                                    {value:2, name:'经济运行'},
+                                    {value:2, name:'非经济运行'},
+                                    {value:0, name:'1级'},
+                                    {value:0, name:'2级'},
+                                    {value:0, name:'3级'},
+                                    {value:0, name:'合格'},
+                                    {value:0, name:'不合格'}
+                                ],
+                                itemStyle: {
+                                    emphasis: {
+                                        shadowBlur: 10,
+                                        shadowOffsetX: 0,
+                                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                    }
+                                }
+                            }
+                        ]
+                    };
+
+                    // 使用刚指定的配置项和数据显示图表。
+                    myChart.setOption(option);
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
