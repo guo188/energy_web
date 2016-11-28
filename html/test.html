@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    .st_tree ul li
+    {
+            font-size:13px; 
+            color:#222; 
+             line-height:18px; 
+             cursor:pointer;
+             list-style:none; 
+             background:url(st_folder.gif); 
+            background-repeat:no-repeat;    
+            padding:0 0 3px 20px;
+    }
+</style>
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".ul").hide();
+})
+ 
+$(document).ready(function()
+{
+    $("#li1").click(function()
+    {
+    $("#ul1").toggle();
+    });
+});
+ 
+$(document).ready(function()
+{
+    $("#li2").click(function()
+    {
+    $("#ul2").toggle();
+    });
+});
+ 
+$(document).ready(function()
+{
+    $("#li3").click(function()
+    {
+    $("#ul3").toggle();
+ 
+    });
+});
+ 
+</script>
+ 
+<div class="st_tree">
+<ul>
+    <li ><a href="#" >一级目录1</a></li>
+    <li id="li1"><a href="#" >一级目录2</a></li>
+    <ul show="true" id="ul1" class="ul">
+        <li ><a href="#" >二级目录2.1</a></li>
+        <li ><a href="#" >二级目录2.2</a></li>
+    </ul>
+    <li id="li2"><a href="#" >一级目录3</a></li>
+    <ul id="ul2" class="ul">
+        <li ><a href="#" >二级目录3.1</a></li>
+        <li ><a href="#" >二级目录3.2</a></li>
+        <li id="li3"><a href="#" >二级目录3.3</a></li>
+        <ul id="ul3" class="ul">
+            <li ><a href="#" >三级目录3.3.1</a></li>
+            <li ><a href="#">三级目录3.3.2</a></li>
+        </ul>
+    </ul>
+</ul>
+</div>
+ 
+</body>
+</html>
